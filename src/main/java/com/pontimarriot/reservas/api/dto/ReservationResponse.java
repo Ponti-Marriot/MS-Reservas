@@ -1,6 +1,5 @@
 package com.pontimarriot.reservas.api.dto;
 
-import com.pontimarriot.reservas.domain.enums.PaymentStatus;
 import com.pontimarriot.reservas.domain.enums.ReservationStatus;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -17,21 +16,4 @@ public record ReservationResponse(
         String currency,
         ReservationStatus status,
         List<PaymentSummaryDto> payments
-) {}
-
-record PaymentSummaryDto(
-        String transactionId,
-        PaymentStatus status,
-        BigDecimal amount
-) {}
-
-record CancelReservationRequest(
-        String reason,
-        String origin,   // CLIENTE | HOTEL | SYSTEM
-        BigDecimal refundAmount
-) {}
-
-record CancelReservationResponse(
-        String reservationId,
-        ReservationStatus status
 ) {}

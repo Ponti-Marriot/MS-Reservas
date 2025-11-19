@@ -12,12 +12,10 @@ import com.pontimarriot.reservas.infrastructure.kafka.ReservationEventPublisher;
 import com.pontimarriot.reservas.infrastructure.properties.PropertiesClient;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
@@ -47,7 +45,7 @@ public class ReservationServiceImpl implements ReservationService {
         validateDates(request.checkIn(), request.checkOut());
         
         // 2. Llamar a MS-Propiedades para ver habitaciones disponibles
-        boolean available = propertiesClient.isRoomAvailable(
+        propertiesClient.isRoomAvailable(
             request.roomTypeCode(), 
             request.checkIn(), 
             request.checkOut(), 
