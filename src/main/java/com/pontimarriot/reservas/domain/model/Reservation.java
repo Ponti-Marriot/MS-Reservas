@@ -14,7 +14,7 @@ public class Reservation {
     private LocalDate checkOut;
     private BigDecimal totalPrice;
     private ReservationStatus status;
-    private String currency;           // ej. COP, USD
+    private String currency;           // COP, USD
     private String idempotencyKey;     // para evitar duplicados
     private String createdBy;          // usuario o sistema
     private OffsetDateTime createdAt;
