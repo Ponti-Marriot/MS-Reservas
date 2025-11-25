@@ -14,8 +14,10 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 import java.util.HashMap;
 import java.util.Map;
 
-@Configuration
+//@Configuration
 public class KafkaConfig {
+
+    /*
 
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
@@ -34,4 +36,6 @@ public class KafkaConfig {
     public KafkaTemplate<String, ReservationEvent> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
     }
+     */
+
 }
