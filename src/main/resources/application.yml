@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: reservas
+  config:
+    import: "optional:configserver:http://localhost:8083"
